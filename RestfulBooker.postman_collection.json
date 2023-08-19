@@ -1,0 +1,1206 @@
+{
+	"info": {
+		"_postman_id": "b57ac5ff-d399-47e7-ba1f-6b38e5960094",
+		"name": "Restful Booker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19896058"
+	},
+	"item": [
+		{
+			"name": "Getting Started",
+			"item": [
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{rb_url}}/ping",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBookingIds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{rb_url}}/booking/",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Booking by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{rb_url}}/booking/1",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Booking by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{rb_url}}/booking/",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Booking by Date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{rb_url}}/booking/",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{rb_url}}/auth",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\" : \"\",\n    \"lastname\" : \"\",\n    \"totalprice\" : \"dsddsds\",\n    \"depositpaid\" : false,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-08-12\",\n        \"checkout\" : \"2023-08-16\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+						},
+						"url": {
+							"raw": "{{rb_url}}/booking",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "token=abc123"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\" : \"Islamiyat\",\n    \"lastname\" : \"Ayomide\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : false,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Launch\"\n}"
+						},
+						"url": {
+							"raw": "{{rb_url}}/booking/1",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partially Update booking",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "token=abc123"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\" : \"Akeem\",\n    \"lastname\" : \"Ishola\"\n}"
+						},
+						"url": {
+							"raw": "{{rb_url}}/booking/1",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "token=abc123"
+							}
+						],
+						"url": {
+							"raw": "{{rb_url}}/booking/11",
+							"host": [
+								"{{rb_url}}"
+							],
+							"path": [
+								"booking",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POISED STRATEGY",
+			"item": [
+				{
+					"name": "1 Parameter Testing",
+					"item": [
+						{
+							"name": "Positive Test",
+							"item": [
+								{
+									"name": "Auth",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}"
+										},
+										"url": {
+											"raw": "{{rb_url}}/auth",
+											"host": [
+												"{{rb_url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create booking",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstname\" : \"Ibrahim\",\n    \"lastname\" : \"Fatai\",\n    \"totalprice\" : 2000,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-08-12\",\n        \"checkout\" : \"2023-08-16\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+										},
+										"url": {
+											"raw": "{{rb_url}}/booking",
+											"host": [
+												"{{rb_url}}"
+											],
+											"path": [
+												"booking"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update booking",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Cookie",
+												"value": "token=abc123"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstname\" : \"Islamiyat\",\n    \"lastname\" : \"Ayomide\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : false,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Launch\"\n}"
+										},
+										"url": {
+											"raw": "{{rb_url}}/booking/1",
+											"host": [
+												"{{rb_url}}"
+											],
+											"path": [
+												"booking",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Partially Update booking Copy",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Cookie",
+												"value": "token=abc123"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstname\" : \"Akeem\",\n    \"lastname\" : \"Ishola\"\n}"
+										},
+										"url": {
+											"raw": "{{rb_url}}/booking/1",
+											"host": [
+												"{{rb_url}}"
+											],
+											"path": [
+												"booking",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "Passing the correct and expected value to each parameter"
+						},
+						{
+							"name": "Negative Testing",
+							"item": [
+								{
+									"name": "Auth Endpoint",
+									"item": [
+										{
+											"name": "valid credentials",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/auth",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"auth"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Valid username and invalid password",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"passwor123\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/auth",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"auth"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "inalid username and valid password",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"username\" : \"admi\",\n    \"password\" : \"password123\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/auth",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"auth"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "invalid credentials",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"username\" : \"admi\",\n    \"password\" : \"passwrd123\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/auth",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"auth"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "null parameter",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"username\" :null ,\n    \"password\" : \"passwrd123\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/auth",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"auth"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Create Booking",
+									"item": [
+										{
+											"name": "Value with Null in parameter",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"firstname\" : \"\",\n    \"lastname\" : \"\",\n    \"totalprice\" : \"dsddsds\",\n    \"depositpaid\" : false,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-08-12\",\n        \"checkout\" : \"2023-08-16\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/booking",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"booking"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Value with Empty String",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"firstname\" : \"\",\n    \"lastname\" : \"\",\n    \"totalprice\" : \"dsddsds\",\n    \"depositpaid\" : false,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-08-12\",\n        \"checkout\" : \"2023-08-16\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/booking",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"booking"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Missing parameter",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"firstname\" : \"\",\n    \"lastname\" : \"\",\n    \"totalprice\" : \"dsddsds\",\n    \"depositpaid\" : false,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-08-12\",\n        \"checkout\" : \"2023-08-16\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/booking",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"booking"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Value with Wrong datatype",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"firstname\" : \"\",\n    \"lastname\" : \"\",\n    \"totalprice\" : \"dsddsds\",\n    \"depositpaid\" : false,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-08-12\",\n        \"checkout\" : \"2023-08-16\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/booking",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"booking"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Whitespace between parameter value",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"firstname\" : \"Fatai Abiodun\",\n    \"lastname\" : \"-(*\",\n    \"totalprice\" : \"dsdd. sds\",\n    \"depositpaid\" : false,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-08-12\",\n        \"checkout\" : \"2023-08-16\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+												},
+												"url": {
+													"raw": "{{rb_url}}/booking",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"booking"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Messing with the date format",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n     \"lastname\" : \"Frank\",\n     \"bookingdates\" : {\n        \"checkin\" : \"2018=-01\",\n        \"checkout\" : \"201901-01\"\n    }\n\n}\n//Messing with the payload, we expect some error response since the date format is invalid. We need to report this to the developer",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{rb_url}}/booking/14",
+													"host": [
+														"{{rb_url}}"
+													],
+													"path": [
+														"booking",
+														"14"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							],
+							"description": "## Auth endpoint\n\nPassing incorrect values to each parameter of the endpoint. e.g for `auth` endpoint, there are 5 possible scenarios namely:\n\n- Leave one or both fields empty\n    \n- Valid password and Valid username\n    \n- Valid password and invalid username\n    \n- Invalid password and valid username\n    \n- invalid password and invalid username\n    \n\n## POST/PUT/PATCH REQUEST TESTING\n\n`{ \"firstname\" : \"value\",`\n\n`\"lastname\" : \"value\",`\n\n`\"totalprice\" : \"dsddsds\",`\n\n`\"depositpaid\" : false,`\n\n`\"bookingdates\" : {`\n\n`\"checkin\" : \"2023-08-12\",`\n\n`\"checkout\" : \"2023-08-16\" },`\n\n`\"additionalneeds\" : \"Breakfast\"`\n\n`}`\n\nDuring testing, change each of the parameter `e.g firstname`value to any of these and observe the system response:\n\n- `null`\n    \n- `\"\"` empty string\n    \n- value of wrong data type\n    \n- Remove one or some of the the parameter and see the behavior of the system in the case of `POST` request"
+						}
+					],
+					"description": "This involves messing up with each of the parameters of the different requests one at a time.\n\n- Test with null value (Pass `null` as the value to the parameter)\n- Test with value of wrong datatype\n- Test when the field/parameter is not present\n- Test with an empty string or empty value\n- Test when there is space between the value given to the parameter\n    \n- For date field, pass an invalid date to the payload for POST or PUT or PATCH request and see the behavior"
+				},
+				{
+					"name": "2 Output Testing",
+					"item": [
+						{
+							"name": "Positive Testing",
+							"item": [
+								{
+									"name": "Status code check",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Cookie",
+												"value": "token=abc123"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstname\" : \"Sekina\",\n    \"lastname\" : \"Olayemu\",\n    \"totalprice\" : 0,\n    \"depositpaid\" : \"zaga\",\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Dinner\"\n}"
+										},
+										"url": {
+											"raw": "{{rb_url}}/booking/2",
+											"host": [
+												"{{rb_url}}"
+											],
+											"path": [
+												"booking",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Header checks",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{rb_url}}/booking/1",
+											"host": [
+												"{{rb_url}}"
+											],
+											"path": [
+												"booking",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "During the header check, we set the header to return XML response under the header tab of the GET request by adding the parameter `Accept` with value `application/xml`"
+						},
+						{
+							"name": "Negative Testing",
+							"item": [
+								{
+									"name": "Bookings",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true,
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											},
+											{
+												"key": "Cookie",
+												"value": "token=abc123"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{rb_url}}/booking/",
+											"host": [
+												"{{rb_url}}"
+											],
+											"path": [
+												"booking",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "passing invalid date",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstname\" : \"Emmanuel\",\n    \"lastname\" : \"Emmanuel\",\n    \"totalprice\" : 2002,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-06-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Lola\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{rb_url}}/booking/",
+											"host": [
+												"{{rb_url}}"
+											],
+											"path": [
+												"booking",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "Here also, we changed the header type of Accept to return XML response for the GET bookings endpoint but the response was still in JSON, so flag it as a bug bro. `The endpoint is not processing the header correctly`"
+						}
+					],
+					"description": "This involves testing the server/API response. In doing this, we need to watch for the following:\n\n- Status Code: GET request is expected to return 200 OK, if otherwise, flag it. Also, POST request is expected to return 201 CREATED while DELETE 204 NO CONTENT or 200 OK while POST is expected to return 200 OK or 204 NO CONTENT or 201 CREATED\n- Verify that the endpoint process the header correctly. Under the header tab for a given request, add the parameter: `Accept` with a value `application/xml` and send the request. By default, the response is returned in all format (under the hood, it uses an Accept value of `\\*/\\*` which implies all the response) but we can modify the response to return a specific XML output format. DO THIS FOR EACH REQUEST IN THE COLLECTION.\n    \n\nNB: If the response is not in XML format as expected, then we need to report it that the endpoint is not processing the header correctly\n\nWe could add other headers as well to check but `Accept` is very basic and easy"
+				},
+				{
+					"name": "3 Interoperability Testing",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstname\": \"Susan\",\n    \"lastname\": \"Jackson\",\n    \"totalprice\": 232,\n    \"depositpaid\": false,\n    \"bookingdates\": {\n        \"checkin\": \"12-22-2016\", //just keep messing around with the date format and see the response\n        \"checkout\": \"2015-04-17\"\n    },\n    \"additionalneeds\": \"Breakfast\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{rb_url}}/booking/",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "We are looking at the ability of the API/Endpoint to exchange and make use of information.\n\nA major thing to look out for is how the parameters are formatted, for date parameters. We can test the request by passing different date formats such as `dd/mm/yyyy` or `mm/dd/yyyy`\\` or `yyyy-mm-dd` and then observing the response of the server. This is for request that requires payload\n\nFor GET request, we can test interoperability by observing"
+				},
+				{
+					"name": "4 Security Testing",
+					"item": [
+						{
+							"name": "Deleting without logging in",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{rb_url}}/booking/11",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										"11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logging in with incorrect credentials",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "hello",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{rb_url}}/booking/2",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing scripts as a payload",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstname\": \"‹script›alert(\\\"gotcha!\\\")</script>\", //Note that the API took it as normal, now lets get this response via GET and the bookingID\n    \"lastname\": \"Jackson\",\n    \"totalprice\": 232,\n    \"depositpaid\": false,\n    \"bookingdates\": {\n        \"checkin\": \"12-22-2016\", //just keep messing around with the date format and see the response\n        \"checkout\": \"2015-04-17\"\n    },\n    \"additionalneeds\": \"Breakfast\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{rb_url}}/booking/",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Getting the script firstname",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{rb_url}}/booking/21",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										"21"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "We are trying to be sure that all the pre-requisite are met before a request is successful. Say we expect that a request must contain some authorization or some header before it should be successful, we can try mess around and not provide the expected header or authorization needed. Alternatively, we can also provide in valid authorization or header values and see the behaviour of the API response.\n\nEven if the correct request is sent, we expected a status code of 403 forbidden since the user has not met the authorization and the header requirement"
+				},
+				{
+					"name": "5 Error Testing",
+					"item": [
+						{
+							"name": "incorrect payload value",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"admi\",\n    \"password\" : \"password123\"\n}\n\n// the status code is wrong and it is a bug"
+								},
+								"url": {
+									"raw": "{{rb_url}}/auth",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get record that does not exist",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{rb_url}}/booking/566567",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										"566567"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Incorrect payload values",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// The status code of this request is wrong, it should return 400 Bad Request since a POST request requires some payload"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{rb_url}}/booking/",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										""
+									],
+									"query": [
+										{
+											"key": "The status code of this request is wrong, it should return 400 Bad Request since a POST request requires some payload",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Developers of API should not expect that the client will always have the correct and expected parameters in it. Test by passing:\n\n- Correct query parameter and invalid value\n- Incorrect query parameter that is not even in the response, maybe it happened mistakenly\n- Does the status code and server response correlate\n- POST request without a payload, this is expected to return 400\n    \n\nNB: We expect proper and accurate communication of the errorneous result so we can easily fix the issue.\n\nIf the mistake is from the url, the response from the server should hint us and whether the mistake is from the query parameter, we should also get some him\n\n1. E.g: Say we provided valid invalid credentials as the payload of a POST request for an auth endpoint, or we didnt even provide any payload. Does the status return 401 UNAUTHORISED which is the expectation and is the server response clear?\n2. E.g2: Assuming we did a GET request to a path or query parameter that does not exist or tally, what is the behavior of the server? Expectation is 400 Bad Request\n3. Say for a PUT or POST request, we passed some incorrect parameter value, we also expect 400 and for a DELETE request, we tried to delete something that does not exist, 404 NOT Found status code is expected\n4. POST request without a payload, this is expected to return 400 if otherwise flag it.\n    \n\nIdeally: we should never get a `500 Internal Server Error` because it implies that the server does not know how to handle the request and it can cause the actual application on the UI level to crash\n\nNB: Even when the status is correct depending on the request, 400, 401, 403 or 404. The message that accompanies it should be related and should the status code if Unauthorised or NOT FOUND , BAD REQUEST or FORBIDDEN"
+				},
+				{
+					"name": "6 Data Testing",
+					"item": [
+						{
+							"name": "Create Booking",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstname\": \"Michael\",\n    \"lastname\": \"Olise\",\n    \"totalprice\": 232,\n    \"depositpaid\": true,\n    \"bookingdates\": {\n        \"checkin\": \"2025-02-04\",\n        \"checkout\": \"2015-04-17\"\n    },\n    \"additionalneeds\": \"Supper\"\n}\n//we need to get the ID that will be generated and use it in a GET request to see if we can extract it",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{rb_url}}/booking/",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Created Booking",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{rb_url}}/booking/22",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										"22"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Booking using Query parameter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{rb_url}}/booking/?firstname=Michael&lastname=Olise",
+									"host": [
+										"{{rb_url}}"
+									],
+									"path": [
+										"booking",
+										""
+									],
+									"query": [
+										{
+											"key": "firstname",
+											"value": "Michael"
+										},
+										{
+											"key": "lastname",
+											"value": "Olise"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "This involves data handling techinques and ensuring that data is efficiently communicated via the API between the server and the client.\n\nHow to perform Data Testing\n\n1. Say when we do a POST request and it returns a 201 Created response, we should not totally rely on this and we need to do a GET request with the id that was created during POST request and ensure that we are able to see the data we just created / sent via the payload. The best is to check the DB to confirm the data hits the DB\n    \n2. Ensuring that response provides complete information. For example, if there is an amount in the response data, it is expected that the amount has a currency so as not to confuse the users of whether it is USD, NGN, etc\n    \n3. Scalability: We wanna see the response of the API when we have thousands and millions of records in the DB, will the API be able to provide reponse quickly.\n    \n\nAssuming the DB has 100million records and we wanna do a GET request to get :\n\n- All the records: How fast and efficient is it?\n    \n- Get a specific record at any random point (Test using boundary value techniques): How fast does the API return it?\n    \n\nAssuming it was a POST request, we wanna POST 1000 records to the DB at once. How does the API respond? How long does it take to execute etc."
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{user}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "password",
+			"value": "password123",
+			"type": "string"
+		},
+		{
+			"key": "user",
+			"value": "admin"
+		}
+	]
+}

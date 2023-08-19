@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "bd506090-0dcd-4a6a-b2a3-02b3f6f6db43",
+		"name": "LEARNING API TESTING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19896058"
+	},
+	"item": [
+		{
+			"name": "https://completion.amazon.com/api/2017/suggestions?mid=ATVPDKIKXODER&alias=aps&prefix=c",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/javascript, */*; q=0.01"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cookie",
+						"value": "session-id=143-3111032-4541054; session-id-time=2082787201l; i18n-prefs=USD; sp-cdn=\"L5Z9:NG\"; skin=noskin; ubid-main=131-8823594-1098229; session-token=tf24VnbVeeTzzNSBL6WXDtNM+aKajE5rs/CQUF+E6Djln1zpVJLOleMBKX8b3qNVzj2mNBMOeIccMWelnT4IRKCr6WvNI3ggsuZ1IMfGNyhfMG1eV/zRie/DHidx06NzpvI1w2bfZTYngD/OsZElmRYU1sCi8+p9Zr/CldooCj3qGdo35IIBCll8Frq9W7rN4illtXucXkcAeuQZBheOAfzo2e7sFFTCxHWDVzeXzjM="
+					},
+					{
+						"key": "Origin",
+						"value": "https://www.amazon.com"
+					},
+					{
+						"key": "Referer",
+						"value": "https://www.amazon.com/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"url": {
+					"raw": "https://completion.amazon.com/api/2017/suggestions?alias=aps&mid=ATVPDKIKXODER&prefix=c",
+					"protocol": "https",
+					"host": [
+						"completion",
+						"amazon",
+						"com"
+					],
+					"path": [
+						"api",
+						"2017",
+						"suggestions"
+					],
+					"query": [
+						{
+							"key": "alias",
+							"value": "aps"
+						},
+						{
+							"key": "mid",
+							"value": "ATVPDKIKXODER"
+						},
+						{
+							"key": "prefix",
+							"value": "c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "http://worldtimeapi.org/api/timezone/Africa/Lagos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://worldtimeapi.org/api/timezone/Africa/Lagos",
+					"protocol": "http",
+					"host": [
+						"worldtimeapi",
+						"org"
+					],
+					"path": [
+						"api",
+						"timezone",
+						"Africa",
+						"Lagos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
